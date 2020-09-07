@@ -34,7 +34,7 @@ npm install cross-fetch-json
 ```ts
 import fetch from "cross-fetch-json";
 
-function fetch(info: RequestInfo, init?: RequestInit): Promise<JSONObject | undefined>;
+function fetch<T extends JSONObject>(info: RequestInfo, init?: RequestInit): Promise<T | undefined>;
 ```
 
 <br />

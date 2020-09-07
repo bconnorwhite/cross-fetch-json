@@ -1,7 +1,7 @@
 import fetch from "cross-fetch";
 import parse, { JSONObject } from "parse-json-object";
 
-export default async function(info: RequestInfo, init: RequestInit = {}): Promise<JSONObject | undefined> {
+export default async function<T extends JSONObject>(info: RequestInfo, init: RequestInit = {}): Promise<T | undefined> {
   return fetch(info, {
     ...init,
     headers: {
@@ -10,7 +10,11 @@ export default async function(info: RequestInfo, init: RequestInit = {}): Promis
     }
   }).then(async (response) => {
     return response.text().then((text) => {
-      return parse(text);
+      return parse<T>(text);
     });
   });
+}
+
+export {
+  JSONObject
 }

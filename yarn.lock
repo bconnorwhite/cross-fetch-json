@@ -4189,10 +4189,10 @@ parse-json-object@^1.0.0, parse-json-object@^1.0.5:
   dependencies:
     "@bconnorwhite/json-types" "^1.0.5"
 
-parse-json-object@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/parse-json-object/-/parse-json-object-1.0.6.tgz#0c353dd5cc9a9e1e9275bc7afcaac46a7a23d9b7"
-  integrity sha512-pb81kqB3ihGWj9760Z6NLtqsHt0WD/dBDg7lpVArne7kquHl4uoKmEKsVoaOkXXJh7DAX0Jd91pB533Kqg9EnA==
+parse-json-object@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/parse-json-object/-/parse-json-object-1.1.0.tgz#eef60211cec368259723d8586ecec7252f8fcdb2"
+  integrity sha512-4w5s6uJY1tW9REY8UwUOyaZKSKsrbQrMEzlV/Le/g5t4iMWuuyK83pZZ0OZimSOL9iyv2ORvRSgz71Ekd7iD3g==
   dependencies:
     types-json "^1.0.6"
 

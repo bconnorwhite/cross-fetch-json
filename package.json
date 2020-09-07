@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.5",
-    "parse-json-object": "^1.0.6"
+    "parse-json-object": "^1.1.0"
   },
   "devDependencies": {
     "@bconnorwhite/bob": "^2.0.1",
