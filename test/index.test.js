@@ -1,4 +1,4 @@
-const fetch = require('./build/index.js')["default"];
+const fetch = require('../build/index.js')["default"];
 const { isJSONObject } = require('types-json');
 
 test("success", () => {
