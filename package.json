@@ -1,0 +1,54 @@
+{
+  "name": "cross-fetch-json",
+  "version": "1.0.0",
+  "description": "Universal fetch API that only returns JSON",
+  "license": "MIT",
+  "author": {
+    "name": "Connor White",
+    "email": "connor.bcw@gmail.com",
+    "url": "https://connorwhite.org"
+  },
+  "homepage": "https://connorwhite.org/github/cross-fetch-json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bconnorwhite/cross-fetch-json.git"
+  },
+  "keywords": [
+    "cross",
+    "fetch",
+    "json",
+    "http",
+    "url",
+    "promise",
+    "async",
+    "await",
+    "isomorphic",
+    "universal",
+    "node",
+    "react",
+    "native",
+    "browser",
+    "ponyfill",
+    "whatwg",
+    "xhr",
+    "ajax"
+  ],
+  "files": [
+    "build"
+  ],
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "bob build && yarn test",
+    "postversion": "git push",
+    "prepublishOnly": "yarn run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.5",
+    "parse-json-object": "^1.0.6"
+  },
+  "devDependencies": {
+    "@bconnorwhite/bob": "^2.0.1",
+    "jest": "^26.4.2"
+  }
+}
