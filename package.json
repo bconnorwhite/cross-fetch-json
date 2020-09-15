@@ -44,11 +44,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "cross-fetch": "^3.0.5",
-    "parse-json-object": "^1.1.0"
+    "cross-fetch": "^3.0.6",
+    "parse-json-object": "^2.0.0"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^2.0.1",
+    "@bconnorwhite/bob": "^2.1.0",
     "jest": "^26.4.2"
   }
 }

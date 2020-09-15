@@ -32,9 +32,11 @@ npm install cross-fetch-json
 
 ### Types
 ```ts
-import fetch from "cross-fetch-json";
+import fetch, { JSONValue, JSONObject, JSONArray } from "cross-fetch-json";
 
-function fetch<T extends JSONObject>(info: RequestInfo, init?: RequestInit): Promise<T | undefined>;
+function fetch<T extends JSONValue>(info: RequestInfo, init?: RequestInit): Promise<T | undefined>;
+
+type JSONValue = string | number | boolean | JSONObject | JSONArray
 ```
 
 <br />
