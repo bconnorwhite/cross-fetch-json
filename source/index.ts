@@ -5,7 +5,8 @@ export default async function<T extends JSONValue>(info: RequestInfo, init: Requ
   return fetch(info, {
     ...init,
     headers: {
-      accept: "application/json",
+      "accept": "application/json",
+      "content-type": "application/json",
       ...(init.headers ?? {})
     }
   }).then(async (response) => {
