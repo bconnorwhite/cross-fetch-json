@@ -1,23 +1,32 @@
-<div align="center">
+<!--BEGIN HEADER-->
+<div id="top" align="center">
   <h1>cross-fetch-json</h1>
   <a href="https://npmjs.com/package/cross-fetch-json">
-    <img alt="npm" src="https://img.shields.io/npm/v/cross-fetch-json.svg">
+    <img alt="NPM" src="https://img.shields.io/npm/v/cross-fetch-json.svg">
   </a>
   <a href="https://github.com/bconnorwhite/cross-fetch-json">
-    <img alt="typescript" src="https://img.shields.io/github/languages/top/bconnorwhite/cross-fetch-json.svg">
-  </a>
-  <a href="https://github.com/bconnorwhite/cross-fetch-json">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/cross-fetch-json?label=Stars%20Appreciated%21&style=social">
-  </a>
-  <a href="https://twitter.com/bconnorwhite">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bconnorwhite.svg?label=%40bconnorwhite&style=social">
+    <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/cross-fetch-json.svg">
   </a>
 </div>
 
 <br />
 
-> Universal fetch API that only returns JSON.
+<blockquote align="center">Universal fetch API that returns JSON.</blockquote>
 
+<br />
+
+_If I should maintain this repo, please ⭐️_
+<a href="https://github.com/bconnorwhite/cross-fetch-json">
+  <img align="right" alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/cross-fetch-json?label=%E2%AD%90%EF%B8%8F&style=social">
+</a>
+
+_DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or suggestions._
+<a href="https://twitter.com/bconnorwhite">
+  <img align="right" alt="Twitter" src="https://img.shields.io/twitter/url?label=%40bconnorwhite&style=social&url=https%3A%2F%2Ftwitter.com%2Fbconnorwhite">
+</a>
+
+---
+<!--END HEADER-->
 ## Installation
 
 ```bash
@@ -28,40 +37,63 @@ yarn add cross-fetch-json
 npm install cross-fetch-json
 ```
 
-## API
-
-### Types
-```ts
-import fetch, { JSONValue, JSONObject, JSONArray } from "cross-fetch-json";
-
-function fetch<T extends JSONValue>(info: RequestInfo, init?: RequestInit): Promise<T | undefined>;
-
-type JSONValue = string | number | boolean | JSONObject | JSONArray
+```bash
+pnpm add cross-fetch-json
 ```
 
+## Usage
+
+The `fetchJSON` function returns a `Promise` that resolves to a `JSONValue` or `undefined` if the response is not valid JSON.
+
+```ts
+import { fetchJSON } from "cross-fetch-json";
+
+fetchJSON("https://example.com"); // Promise<JSONValue | undefined>
+```
+
+A `getFetchFn` function is also exported that allows for custom parsing with Zod:
+
+```ts
+import { getFetchFn } from "cross-fetch-json";
+import z from "zod";
+
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number()
+});
+
+const fetchUser = getFetchFn(schema);
+
+fetchUser("https://example.com"); // Promise<{ name: string; age: number; } | undefined>
+```
+
+<!--BEGIN FOOTER-->
+
 <br />
 
-<h2>Dependencies<img align="right" alt="dependencies" src="https://img.shields.io/david/bconnorwhite/cross-fetch-json.svg"></h2>
+<h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/cross-fetch-json?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/cross-fetch-json.svg"></a></h2>
 
-- [cross-fetch](https://www.npmjs.com/package/cross-fetch): Universal WHATWG Fetch API for Node, Browsers and React Native.
-- [parse-json-object](https://www.npmjs.com/package/parse-json-object): Parse a typed JSON object.
+- [cross-fetch](https://www.npmjs.com/package/cross-fetch): Universal WHATWG Fetch API for Node, Browsers and React Native
+- [parse-json-object](https://www.npmjs.com/package/parse-json-object): Parse a typed JSON object
+- [zod](https://www.npmjs.com/package/zod): TypeScript-first schema declaration and validation library with static type inference
 
-<br />
-
-<h2>Dev Dependencies<img align="right" alt="David" src="https://img.shields.io/david/dev/bconnorwhite/cross-fetch-json.svg"></h2>
-
-- [@bconnorwhite/bob](https://www.npmjs.com/package/@bconnorwhite/bob): Bob is a toolkit for TypeScript projects
-- [jest](https://www.npmjs.com/package/jest): Delightful JavaScript Testing.
 
 <br />
 
-<h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/cross-fetch-json.svg"></h2>
+<h3>Dev Dependencies</h3>
 
-[MIT](https://mit-license.org/)
+- [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
+
+
+<br />
+
+<h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/cross-fetch-json.svg"></a></h2>
+
+[MIT](https://opensource.org/licenses/MIT)
+<!--END FOOTER-->
 
 <br />
 
 ## Related Packages:
 - [parse-json-object](https://www.npmjs.com/package/parse-json-object): Parse a typed JSON object.
 - [types-json](https://npmjs.com/package/types-json): Type checking for JSON objects
-
